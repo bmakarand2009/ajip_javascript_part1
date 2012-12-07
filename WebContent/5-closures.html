@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Oops Concept Html</title>
+	<script >
+          /*/*
+        create a utility function which will generate unique IDs
+        challenges : we cannot make it a global function since it can conflict with 3rd party, also we dont want to eat up memory
+        by calling the function again and again.
+        solution : we will create utility with a nameGen closure, and invoke it to create unique IDS
+        */
+        var utility = (function() {
+            var i = 0;
+            return{
+                 //this is as good as saying namegen is a method inside
+                namegen: function() {
+                  var custName = "myName" + i;
+                  i++;
+                  return custName;
+                }
+            }
+        }());
+
+
+        var n1 = utility.namegen();
+        var n2 = utility.namegen();
+        console.log("name1 is" + n1 + " name2 is" + n2);
+    </script>
+</head>
+<body>
+   <h1> My Header </h1>
+</body>
+</html>

@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Call And Apply Html</title>
+	<script type="text/javascript">
+  //Just a Calculator Example, Version2
+// arguments is not a Array but like an array object, so we will use call
+//Refer also to Javascript-class (call, apply method example)
+
+//we dont want "WebContent/6-callAndApply.html"to restric to two elements, hence will use the arguments object
+calculate = function() {
+    //final argument is the function object
+    //as pop method returns the final object and remove it from the array
+    console.log("calling method pop on arguments which is a Array method");
+    var func = Array.prototype.pop.apply(arguments);
+    return func.apply(null,arguments);
+}
+
+var add = function(x, y) {
+    return x + y;
+}
+
+var multiply = function(x, y) {
+    return x * y;
+}
+
+var result = calculate(5, 6, add);
+console.log(result);
+    </script>
+</head>
+<body>
+   <h1> My Header </h1>
+</body>
+</html>

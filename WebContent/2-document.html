@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="utf-8" />
+
+</head>
+<body></html>
+<p id="intro" name="">Hello World!</p>
+<div class="mytop">
+	<p>This is the first para</p>
+	<p>This is the second para</p>
+	<div>This is one more div</div>
+</div>
+<script type="text/javascript">
+//(function(){
+	alert("hello world");
+		var aElement = document.getElementById("intro");
+		//Properties that can be invoked on aElement are
+		/*
+		    x.innerHTML - the text value of x
+		    x.nodeName - the name of x
+		    x.nodeValue - the value of x
+		    x.parentNode - the parent node of x
+		    x.childNodes - the child nodes of x
+		    x.attributes - the attributes nodes of x
+		*/
+		var initialText = aElement.innerHTML; //can also do aElement.node[0].nodeValue;
+		aElement.innerHTML = "<p> Lets add some intro to the paragraph " + initialText + "  </p>";
+
+		var nodeList = document.getElementsByTagName("div");
+		//other methods that can be invoked on aElement are
+		// x.getElementById(id) - get the element with a specified id
+		// x.getElementsByTagName(name) - get all elements with a specified tag name
+		// x.appendChild(node) - insert a child node to x
+		// x.removeChild(node) - remove a child node from x
+		//
+		console.log("nodelist size is" + nodeList.length); //returns 2
+//})();
+	</script>
+
+
+</body>
+</html>

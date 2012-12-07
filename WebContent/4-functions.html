@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Javascript functions</title>
+	<script>
+
+//http://helephant.com/2008/08/19/functions-are-first-class-objects-in-javascript/
+    function feedCat(){
+        console.log("Kibble, tinned food and water");
+    }
+    alert(feedCat instanceof Object);
+
+//functioncs can have properties
+    feedCat.food = "kibble";
+    alert(feedCat.food);
+    alert(feedCat.constructor);
+
+//You can store the function in a variable:
+    function feedCat(){
+        alert("Kibble, tinned food and water");
+    }
+    var eveningChore = feedCat;eveningChore();
+//you can return a function from a function
+    function tonightChores(){
+        return feedCat;
+    }
+    var tonight = tonightChores();
+    tonight();
+
+//Functions vs Function Expressions
+//difference between declaring a function vs function expressions.
+//also see calculate method
+doSomething("sample arg"); //this function would get called eventhough it is declared later
+doSomethingExp();//this will given an error here, that isthe main difference
+function doSomething() {     
+    console.log("argument passed is" + arguments[0]);
+    alert ("this is the doSomething() function");
+}
+
+var doSomethingExp = function() {
+    alert("this function is declared as a expression");
+}
+
+
+
+    </script>
+
+</head>
+<body>
+   <h1> My Header </h1>
+</body>
+</html>
